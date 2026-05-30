@@ -1,26 +1,54 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --ink: #1a1a1a;
+  --ink-2: #202220;
+  --paper: #ffffff;
+  --bg: #f3f2ed;
+  --text: #26261f;
+  --muted: #6f6f66;
+  --muted-2: #8c8c84;
+  --line: #e6e4dc;
+  --line-strong: #d6d4ca;
+  --accent: oklch(0.53 0.095 156);
+  --accent-bright: oklch(0.62 0.11 156);
+  --accent-soft: oklch(0.95 0.02 156);
+  --accent-line: oklch(0.78 0.06 156);
+  --dark-card: #1d1f1c;
+  --dark-card-2: #262824;
+  --shadow: 0 1px 2px rgba(20,22,18,.04), 0 8px 28px -12px rgba(20,22,18,.16);
+  --radius: 14px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.dark {
+  --paper: #111312;
+  --bg: #0d0f0d;
+  --text: #d4d6cf;
+  --muted: #8c8c84;
+  --muted-2: #6f6f66;
+  --line: #2a2c28;
+  --line-strong: #333530;
+  --shadow: 0 1px 2px rgba(0,0,0,.2), 0 8px 28px -12px rgba(0,0,0,.4);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  font-family: "Public Sans", system-ui, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+a { color: inherit; text-decoration: none; }
+
+.mono { font-family: "JetBrains Mono", ui-monospace, monospace; }
+
+code {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 0.875em;
 }
