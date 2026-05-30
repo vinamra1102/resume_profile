@@ -1,0 +1,52 @@
+export const opensource = [
+  {
+    repo: "TanStack Query",
+    package: "@tanstack/eslint-plugin-query",
+    stars: "★49k",
+    date: "May 2026",
+    pr: "PR #10747",
+    prUrl: "https://github.com/TanStack/query/pull/10747",
+    issue: "Issue #10746",
+    prTag: "Co-authored & merged by TkDodo · PR #10747 · Issue #10746",
+    description: [
+      {
+        text: "Merged fix for a false negative in the ",
+        highlight: "no-unstable-deps",
+        rest: " ESLint rule — array-destructured ",
+        code: "useQueries",
+        end: " results were silently ignored, allowing unstable hook dependencies to go undetected.",
+        type: "mixed" as const,
+      },
+      {
+        text: "Handled ",
+        highlight: "ArrayPattern",
+        rest: ", ",
+        highlight2: "RestElement",
+        rest2: ", and ",
+        highlight3: "AssignmentPattern",
+        end: " AST nodes with full test coverage including edge cases.",
+        type: "triple" as const,
+      },
+    ],
+    descriptionSimple: [
+      "Merged fix for a false negative in the **no-unstable-deps** ESLint rule — array-destructured `useQueries` results were silently ignored, allowing unstable hook dependencies to go undetected.",
+      "Handled **ArrayPattern**, **RestElement**, and **AssignmentPattern** AST nodes with full test coverage including edge cases.",
+    ],
+  },
+  {
+    repo: "tRPC",
+    package: "trpc/trpc — fix(client): abort JSONL stream on httpBatchStreamLink unsubscribe",
+    stars: "★17k",
+    date: "May 2026",
+    pr: "PR #7390",
+    prUrl: "https://github.com/trpc/trpc/pull/7390",
+    issue: "Closes #7389",
+    prTag: "Reviewed by KATT & daltino · PR #7390 · Closes #7389",
+    descriptionSimple: [
+      "**httpBatchStreamLink** creates an `AbortController` and passes it to `jsonlStreamConsumer` on every request, but the observable's cleanup function was a noop — `abortController.abort()` was never called on unsubscribe.",
+      "This meant the underlying JSONL response stream kept consuming data from the server even after the subscriber disconnected (unmount, navigation, query cancellation).",
+      "**Fix:** call `abortController.abort()` in the cleanup function so the stream is cancelled when the observable is unsubscribed.",
+      "Added a test that subscribes to a batch stream observable, unsubscribes before the response completes, and asserts `fetch` was aborted.",
+    ],
+  },
+];
