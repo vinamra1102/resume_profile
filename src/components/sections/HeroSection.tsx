@@ -3,13 +3,12 @@
 import { motion } from "framer-motion";
 import { profile } from "@/data/profile";
 
-const letters = profile.name.split("");
-
 export function HeroSection() {
   const [firstName, lastName] = profile.name.split(" ");
 
   return (
     <header
+      className="hero-section"
       style={{
         position: "relative",
         background: "var(--ink)",
@@ -108,11 +107,13 @@ export function HeroSection() {
 
       {/* Subtitle */}
       <motion.p
+        className="hero-subtitle"
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.7, ease: "easeOut" }}
         style={{
           marginTop: "20px",
+          marginBottom: "60px",
           fontSize: "clamp(14px,1.6vw,18px)",
           color: "#d8dad4",
           fontWeight: 500,

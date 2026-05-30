@@ -37,6 +37,7 @@ export function ContactBar() {
     >
       {/* Avatar */}
       <div
+        className="avatar-wrap"
         style={{
           position: "absolute",
           left: "56px",
@@ -47,11 +48,9 @@ export function ContactBar() {
           background: "linear-gradient(150deg,#2a3a2c,#1a1f1a)",
           border: "5px solid var(--ink-2)",
           boxShadow: "0 10px 30px -10px rgba(0,0,0,.6)",
-          display: "grid",
-          placeItems: "center",
+          overflow: "hidden",
           zIndex: 5,
         }}
-        aria-hidden="true"
       >
         <div
           style={{
@@ -60,18 +59,23 @@ export function ContactBar() {
             borderRadius: "50%",
             border: "1px solid var(--accent-line)",
             opacity: 0.5,
+            zIndex: 2,
+            pointerEvents: "none",
+          }}
+          aria-hidden="true"
+        />
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/profile.jpg"
+          alt={`${profile.name} portrait`}
+          style={{
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            objectPosition: "center top",
+            display: "block",
           }}
         />
-        <span
-          style={{
-            fontWeight: 800,
-            fontSize: "46px",
-            color: "#fff",
-            letterSpacing: ".02em",
-          }}
-        >
-          VB
-        </span>
       </div>
 
       {contacts.map((c, i) => (
