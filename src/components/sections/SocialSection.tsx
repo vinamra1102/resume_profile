@@ -1,20 +1,20 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Github, Linkedin } from "lucide-react";
+import { IconBrandGithub, IconBrandLinkedin } from "@tabler/icons-react";
 import { SectionLabel } from "@/components/SectionLabel";
 import { profile } from "@/data/profile";
 
 const socials = [
   {
     href: profile.github,
-    icon: Github,
+    icon: IconBrandGithub,
     label: "GitHub",
     sub: "vinamra1102",
   },
   {
     href: profile.linkedin,
-    icon: Linkedin,
+    icon: IconBrandLinkedin,
     label: "LinkedIn",
     sub: "vinamra-bhonsle",
   },

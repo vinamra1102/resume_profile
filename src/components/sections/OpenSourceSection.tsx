@@ -2,8 +2,10 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Github, GitMerge, ArrowUpRight } from "lucide-react";
+import { GitMerge, ArrowUpRight } from "lucide-react";
+import { IconBrandGithub } from "@tabler/icons-react";
 import { opensource } from "@/data/opensource";
+import { SectionLabel } from "@/components/SectionLabel";
 
 function renderInlineText(text: string) {
   const parts = text.split(/(`[^`]+`|\*\*[^*]+\*\*)/g);
@@ -44,7 +46,7 @@ const containerVariants = {
 
 const itemVariants = {
   hidden: { opacity: 0, x: -24 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.45, ease: "easeOut" } },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.45, ease: "easeOut" as const } },
 };
 
 export function OpenSourceSection() {
@@ -115,7 +117,7 @@ export function OpenSourceSection() {
                   (e.currentTarget.style.color = "var(--text)")
                 }
               >
-                <Github size={16} aria-hidden="true" />
+                <IconBrandGithub size={16} aria-hidden="true" />
                 {entry.repo}
                 <span
                   style={{
@@ -225,26 +227,3 @@ export function OpenSourceSection() {
   );
 }
 
-function SectionLabel({ children }: { children: React.ReactNode }) {
-  return (
-    <h2
-      style={{
-        fontSize: "13px",
-        letterSpacing: ".18em",
-        textTransform: "uppercase",
-        fontWeight: 700,
-        color: "var(--accent)",
-        display: "flex",
-        alignItems: "center",
-        gap: "12px",
-        margin: "0 0 20px",
-      }}
-    >
-      {children}
-      <span
-        style={{ content: "", height: "1px", flex: 1, background: "var(--line-strong)", display: "block" }}
-        aria-hidden="true"
-      />
-    </h2>
-  );
-}

@@ -1,21 +1,21 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Phone, Mail, Github, Linkedin } from "lucide-react";
+import { IconPhone, IconMail, IconBrandGithub, IconBrandLinkedin } from "@tabler/icons-react";
 import { profile } from "@/data/profile";
 
 const contacts = [
-  { href: `tel:${profile.phone.replace(/\s/g, "")}`, icon: Phone, label: profile.phone },
-  { href: `mailto:${profile.email}`, icon: Mail, label: profile.email },
+  { href: `tel:${profile.phone.replace(/\s/g, "")}`, icon: IconPhone, label: profile.phone },
+  { href: `mailto:${profile.email}`, icon: IconMail, label: profile.email },
   {
     href: profile.github,
-    icon: Github,
+    icon: IconBrandGithub,
     label: "github.com/vinamra1102",
     external: true,
   },
   {
     href: profile.linkedin,
-    icon: Linkedin,
+    icon: IconBrandLinkedin,
     label: "linkedin.com/in/vinamra-bhonsle",
     external: true,
   },

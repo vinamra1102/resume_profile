@@ -52,3 +52,41 @@ code {
   font-family: "JetBrains Mono", ui-monospace, monospace;
   font-size: 0.875em;
 }
+
+/* Responsive: tablet */
+@media (max-width: 860px) {
+  .resume-sheet { margin: 0 !important; border-radius: 0 !important; }
+  .hero-section { padding: 54px 28px 70px !important; }
+  .contact-bar {
+    grid-template-columns: 1fr 1fr !important;
+    padding-left: 0 !important;
+    padding-top: 64px !important;
+  }
+  .contact-bar a { font-size: 12.5px !important; padding: 16px !important; }
+  .body-grid { grid-template-columns: 1fr !important; }
+  .sidebar-col {
+    border-right: none !important;
+    border-bottom: 1px solid var(--line) !important;
+    padding: 36px 24px 40px !important;
+  }
+  .main-col { padding: 36px 24px 44px !important; }
+  .avatar-wrap {
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    top: -58px !important;
+    bottom: auto !important;
+    width: 116px !important;
+    height: 116px !important;
+  }
+  .avatar-wrap span { font-size: 38px !important; }
+}
+
+/* Responsive: mobile */
+@media (max-width: 460px) {
+  .contact-bar { grid-template-columns: 1fr !important; }
+}
+
+@media print {
+  body { background: #fff; }
+  .resume-sheet { box-shadow: none !important; margin: 0 !important; max-width: none !important; border-radius: 0 !important; }
+}

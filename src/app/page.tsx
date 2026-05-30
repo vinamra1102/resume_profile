@@ -20,6 +20,7 @@ export default function Home() {
     >
       <main
         role="main"
+        className="resume-sheet"
         style={{
           maxWidth: "1100px",
           margin: "32px auto",
@@ -34,6 +35,7 @@ export default function Home() {
 
         {/* Two-column body */}
         <div
+          className="body-grid"
           style={{
             display: "grid",
             gridTemplateColumns: "35% 65%",
@@ -42,6 +44,7 @@ export default function Home() {
         >
           {/* Left sidebar */}
           <aside
+            className="sidebar-col"
             aria-label="Sidebar"
             style={{
               padding: "44px 36px 48px",
@@ -56,6 +59,7 @@ export default function Home() {
 
           {/* Right main */}
           <div
+            className="main-col"
             aria-label="Main content"
             style={{ padding: "44px 48px 56px" }}
           >
@@ -76,7 +80,7 @@ export default function Home() {
             fontFamily: "var(--font-jetbrains-mono), monospace",
           }}
         >
-          Vinamra Bhonsle · Full-Stack Developer &amp; Cybersecurity Enthusiast · 2026
+          Vinamra Bhonsle &middot; Full-Stack Developer &amp; Cybersecurity Enthusiast &middot; 2026
         </footer>
       </main>
     </div>

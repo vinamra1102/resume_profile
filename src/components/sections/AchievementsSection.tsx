@@ -6,7 +6,8 @@ import { Trophy, GitMerge, Laptop } from "lucide-react";
 import { SectionLabel } from "@/components/SectionLabel";
 import { achievements } from "@/data/achievements";
 
-const iconMap: Record<string, React.ComponentType<{ size?: number; "aria-hidden"?: string }>> = {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const iconMap: Record<string, React.ComponentType<any>> = {
   trophy: Trophy,
   merge: GitMerge,
   laptop: Laptop,
@@ -58,7 +59,7 @@ const containerVariants = {
 
 const itemVariants = {
   hidden: { opacity: 0, y: 12 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" as const } },
 };
 
 export function AchievementsSection() {
